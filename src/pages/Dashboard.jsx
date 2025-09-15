@@ -130,7 +130,7 @@ function Dashboard() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center bg-gray-50">
+      <div className="h-screen flex items-center justify-center ">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
       </div>
     );
@@ -138,7 +138,7 @@ function Dashboard() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center bg-gray-50 px-4">
+      <div className="h-screen flex items-center justify-center px-4">
         <div className="bg-white p-6 rounded-lg shadow-md text-center">
           <p className="text-red-500 mb-4">{error}</p>
           <button

@@ -67,7 +67,7 @@ function Expense() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
       </div>
     );
@@ -75,7 +75,7 @@ function Expense() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-500 mb-4">{error}</p>
           <button
