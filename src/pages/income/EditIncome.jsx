@@ -4,11 +4,11 @@ import { FiArrowLeft, FiDollarSign, FiTag, FiCreditCard } from "react-icons/fi";
 import { api } from "../../utils/api";
 
 const categories = [
-  { value: "Salary", label: "💰 Salary" },
-  { value: "Business", label: "🅱️ Business" },
+  { value: "Salary", label: "💰 ប្រាក់ខែ" },
+  { value: "Bonus", label: "🎁 ប្រាក់បន្ងែម" },
   { value: "Freelance", label: "💼 Freelance" },
-  { value: "Investment", label: "📈 Investment" },
-  { value: "Other", label: "📌 Other" },
+  { value: "Investment", label: "📈 ប្រាក់វិនិយោគ" },
+  { value: "Other", label: "📌 ផ្សេងទៀត" },
 ];
 
 function EditIncome() {
@@ -80,7 +80,7 @@ function EditIncome() {
             >
               <FiArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <h1 className="text-xl font-semibold text-gray-800">Edit Income</h1>
+            <h1 className="text-xl font-semibold text-gray-800">កែប្រែ ប្រតិបត្តិការណ៍</h1>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ function EditIncome() {
           {/* Source */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Source <span className="text-red-500">*</span>
+              ប្រភពចំណូល <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -115,7 +115,7 @@ function EditIncome() {
           {/* Amount */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Amount <span className="text-red-500">*</span>
+              ចំនួនទឹកប្រាក់ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -138,7 +138,7 @@ function EditIncome() {
           {/* Category */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Category <span className="text-red-500">*</span>
+              ប្រភេទប្រតិបត្តិការណ៍ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

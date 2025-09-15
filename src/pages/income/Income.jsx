@@ -93,15 +93,15 @@ function Income() {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Income</h1>
-          <p className="text-gray-600">Track and manage your income sources</p>
+          <h1 className="text-2xl font-bold text-gray-800">ចំណូល</h1>
+          <p className="text-gray-600">តាមដាន និងគ្រប់គ្រងប្រភពចំណូលរបស់អ្នក។</p>
         </div>
         <button
           onClick={() => navigate("/create-income")}
           className="mt-4 md:mt-0 flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
         >
           <FiPlus className="mr-2" />
-          Add Income
+          បន្ថែម ប្រតិបត្តិការណ៍
         </button>
       </div>
 
@@ -110,7 +110,7 @@ function Income() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">Total Income</p>
+              <p className="text-sm font-medium text-gray-500">ចំនួនទឹកប្រាក់សរុប</p>
               <p className="text-2xl font-bold text-gray-800">
                 ${total.toFixed(2)}
               </p>
@@ -124,7 +124,7 @@ function Income() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">Transactions</p>
+              <p className="text-sm font-medium text-gray-500">ប្រតិបត្តិការណ៍</p>
               <p className="text-2xl font-bold text-gray-800">
                 {incomes.length}
               </p>
@@ -138,7 +138,7 @@ function Income() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500">Categories</p>
+              <p className="text-sm font-medium text-gray-500">ប្រភេទប្រតិបត្តិការណ៍</p>
               <p className="text-2xl font-bold text-gray-800">
                 {Object.keys(categoryTotals).length}
               </p>
@@ -154,7 +154,7 @@ function Income() {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-100">
           <h2 className="text-lg font-semibold text-gray-800">
-            Recent Transactions
+            ប្រតិបត្តិការណ៍​ ថ្មីៗ
           </h2>
         </div>
         <div className="divide-y divide-gray-100">
@@ -191,7 +191,7 @@ function Income() {
             ))
           ) : (
             <div className="p-6 text-center text-gray-500">
-              No income records found. Add your first income source!
+              គ្មានប្រតិបត្តិការណ៍
             </div>
           )}
         </div>
@@ -202,7 +202,7 @@ function Income() {
         <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-100">
             <h2 className="text-lg font-semibold text-gray-800">
-              Income by Category
+              ប្រភេទប្រតិបត្តិការណ៍
             </h2>
           </div>
           <div className="p-6">

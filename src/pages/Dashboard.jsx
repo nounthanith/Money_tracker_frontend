@@ -185,7 +185,7 @@ function Dashboard() {
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <h1 className="text-2xl font-bold text-gray-900">Financial Overview</h1>
+          <h1 className="text-2xl font-bold text-gray-900">ការគ្រប់គ្រងទឹកប្រាក់</h1>
           
           {/* Date Range Selector */}
           <div className="relative">
@@ -258,76 +258,27 @@ function Dashboard() {
         
         {/* Date Range Display */}
         <p className="mt-2 text-sm text-gray-500">
-          Showing data from {format(dateRange.startDate, 'MMM d, yyyy')} to {format(dateRange.endDate, 'MMM d, yyyy')}
+          បង្ហាញ ទិន្នន័យ ពី {format(dateRange.startDate, 'MMM d, yyyy')} ដល់ {format(dateRange.endDate, 'MMM d, yyyy')}
         </p>
       </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <div className="flex items-center">
-              <div className="p-3 rounded-xl bg-indigo-500 text-white">
-                <FiDollarSign size={24} />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm text-gray-500">Balance</p>
-                <p className="text-2xl font-bold">
-                  {formatCurrency(totals.balance)}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <div className="flex items-center">
-              <div className="p-3 rounded-xl bg-green-500 text-white">
-                <FiTrendingUp size={24} />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm text-gray-500">Income</p>
-                <p className="text-2xl font-bold">
-                  {formatCurrency(totals.income)}
-                </p>
-                <span className="text-green-600 text-sm">
-                  {dashboardData.counts.income} transactions
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <div className="flex items-center">
-              <div className="p-3 rounded-xl bg-red-500 text-white">
-                <FiTrendingDown size={24} />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm text-gray-500">Expenses</p>
-                <p className="text-2xl font-bold">
-                  {formatCurrency(totals.expense)}
-                </p>
-                <span className="text-red-600 text-sm">
-                  {dashboardData.counts.expense} transactions
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Financial Summary Section */}
         <div className="mt-8 bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-xl font-semibold mb-6 text-gray-800">Financial Overview</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Income Card */}
             <div className="border-l-4 border-green-500 bg-green-50 p-4 rounded-r-lg">
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-sm font-medium text-green-800">Total Income</p>
+                  <p className="text-sm font-medium text-green-800">ចំណូលសរុប</p>
                   <p className="text-2xl font-bold text-green-600">{formatCurrency(totals.income)}</p>
                   <p className="text-sm text-green-600 mt-1">
-                    {incomePercentage}% of total
+                    {incomePercentage}% នៃចំណូលសរុប
                   </p>
-                  <p className="text-xs text-gray-500 mt-2">{dashboardData.counts.income} transactions</p>
+                  <p className="text-xs text-gray-500 mt-2">ប្រតិបត្តិការណ៍ {dashboardData.counts.income}</p>
                 </div>
                 <div className="p-2 bg-green-100 rounded-lg">
                   <FiTrendingUp className="w-6 h-6 text-green-600" />
@@ -339,12 +290,12 @@ function Dashboard() {
             <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-sm font-medium text-red-800">Total Expenses</p>
+                  <p className="text-sm font-medium text-red-800">ចំណាយសរុប</p>
                   <p className="text-2xl font-bold text-red-600">{formatCurrency(totals.expense)}</p>
                   <p className="text-sm text-red-600 mt-1">
-                    {expensePercentage}% of total
+                    {expensePercentage}% នៃចំណាយសរុប
                   </p>
-                  <p className="text-xs text-gray-500 mt-2">{dashboardData.counts.expense} transactions</p>
+                  <p className="text-xs text-gray-500 mt-2">ប្រតិបត្តិការណ៍ {dashboardData.counts.expense}</p>
                 </div>
                 <div className="p-2 bg-red-100 rounded-lg">
                   <FiTrendingDown className="w-6 h-6 text-red-600" />
@@ -356,14 +307,13 @@ function Dashboard() {
             <div className={`border-l-4 ${isPositiveBalance ? 'border-green-500 bg-green-50' : 'border-red-500 bg-red-50'} p-4 rounded-r-lg`}>
               <div className="flex justify-between items-start">
                 <div>
-                  <p className="text-sm font-medium">Net Balance</p>
+                  <p className="text-sm font-medium text-gray-800">ចំណូលសរុប និង ចំណាយសរុប</p>
                   <p className={`text-2xl font-bold ${isPositiveBalance ? 'text-green-600' : 'text-red-600'}`}>
                     {formatCurrency(Math.abs(netBalance))}
-                    <span className="text-sm ml-1">{isPositiveBalance ? 'saved' : 'overspent'}</span>
+                    <span className="text-sm ml-1">{isPositiveBalance ? 'ចំណេញ' : 'ខាត'}</span>
                   </p>
                   <p className="text-sm mt-1">
-                    {isPositiveBalance ? 'Great job!' : 'Watch your spending'}
-                  </p>
+                    {isPositiveBalance ? 'ចំណេញ' : 'ខាត'}</p>
                 </div>
                 <div className={`p-2 ${isPositiveBalance ? 'bg-green-100' : 'bg-red-100'} rounded-lg`}>
                   {isPositiveBalance ? (
@@ -378,7 +328,7 @@ function Dashboard() {
 
           {/* Income vs Expense Comparison */}
           <div className="mb-8">
-            <h3 className="text-lg font-medium mb-4">Income vs Expenses</h3>
+            <h3 className="text-lg font-medium mb-4">ចំណូល និង ចំណាយ</h3>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart 
@@ -397,7 +347,7 @@ function Dashboard() {
                     width={80}
                   />
                   <Tooltip 
-                    formatter={(value) => [`${formatCurrency(value)}`, value === totals.income ? 'Income' : 'Expense']}
+                    formatter={(value) => [`${formatCurrency(value)}`, value === totals.income ? 'ចំណូល' : 'ចំណាយ']}
                     labelFormatter={() => ''}
                   />
                   <Bar 
@@ -421,7 +371,7 @@ function Dashboard() {
           {/* Ratio Indicator */}
           <div className="bg-gray-50 p-4 rounded-lg mb-6">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium text-gray-700">Income to Expense Ratio</span>
+              <span className="text-sm font-medium text-gray-700">សង្ខេប ប្រតិបត្តិការណ៍ចំណូល និង ចំណាយ</span>
               <span className="text-sm font-semibold">
                 {totals.expense > 0 ? (totals.income / totals.expense).toFixed(2) : '∞'}:1
               </span>
@@ -436,8 +386,8 @@ function Dashboard() {
               ></div>
             </div>
             <div className="flex justify-between mt-2 text-xs text-gray-500">
-              <span>More Income</span>
-              <span>More Expenses</span>
+              <span>ចំណេញ</span>
+              <span>ខាត</span>
             </div>
           </div>
         </div>
@@ -445,7 +395,7 @@ function Dashboard() {
         {/* Breakdown Section */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="bg-white shadow-lg rounded-2xl p-6">
-            <h3 className="text-lg font-semibold mb-4">Income by Category</h3>
+            <h3 className="text-lg font-semibold mb-4">ប្រតិបត្តិការណ៍ចំណូល</h3>
             {incomeData.length > 0 ? (
               <div className="space-y-4">
                 {incomeData.map((item, index) => (
@@ -464,12 +414,12 @@ function Dashboard() {
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-gray-500 text-center py-8">No income data available</p>
+              <p className="text-sm text-gray-500 text-center py-8">មិនមានទិន្នន័យប្រតិបត្តិការណ៍ចំណូល</p>
             )}
           </div>
 
           <div className="bg-white shadow-lg rounded-2xl p-6">
-            <h3 className="text-lg font-semibold mb-4">Expenses by Category</h3>
+            <h3 className="text-lg font-semibold mb-4">ប្រតិបត្តិការណ៍ចំណាយ</h3>
             {expenseData.length > 0 ? (
               <div className="space-y-4">
                 {expenseData.map((item, index) => (
@@ -488,7 +438,7 @@ function Dashboard() {
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-gray-500 text-center py-8">No expense data available</p>
+              <p className="text-sm text-gray-500 text-center py-8">មិនមានទិន្នន័យប្រតិបត្តិការណ៍ចំណាយ</p>
             )}
           </div>
         </div>

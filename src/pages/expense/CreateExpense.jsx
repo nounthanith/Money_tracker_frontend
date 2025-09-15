@@ -4,13 +4,13 @@ import { FiArrowLeft, FiDollarSign, FiTag, FiCalendar, FiFileText } from 'react-
 import { api } from '../../utils/api';
 
 const categories = [
-  { value: 'Food', label: '🍔 Food' },
-  { value: 'Shopping', label: '🛍️ Shopping' },
-  { value: 'Transportation', label: '🚗 Transportation' },
-  { value: 'Bills', label: '💳 Bills' },
-  { value: 'Entertainment', label: '🎬 Entertainment' },
-  { value: 'Health', label: '🏥 Health' },
-  { value: 'Others', label: '📌 Others' },
+  { value: 'Food', label: '🍔 អាហារ' },
+  { value: 'Shopping', label: '🛍️ ទិញទំនិញ' },
+  { value: 'Transportation', label: '🚗 ការធ្វើដំណើរ' },
+  { value: 'Bills', label: '💳 ការបង់ប្រាក់តាមកាត' },
+  { value: 'Entertainment', label: '🎬 កំម្សាន្ត' },
+  { value: 'Health', label: '🏥សុខភាព' },
+  { value: 'Other', label: '📌 ផ្សេងទៀត' },
 ];
 
 function CreateExpense() {
@@ -79,7 +79,7 @@ function CreateExpense() {
             >
               <FiArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <h1 className="text-xl font-semibold text-gray-800">Add New Expense</h1>
+            <h1 className="text-xl font-semibold text-gray-800">បន្ថែម ប្រតិបត្តិការណ៍ចំណាយ</h1>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ function CreateExpense() {
           {/* Title */}
           <div>
             <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
-              Title <span className="text-red-500">*</span>
+              ចំណងជើង <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -107,7 +107,7 @@ function CreateExpense() {
                 value={formData.title}
                 onChange={handleChange}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Dinner with friends"
+                placeholder="បង់ទឺក​ បង់ធានារ៉ាប់រង"
                 required
               />
             </div>
@@ -116,7 +116,7 @@ function CreateExpense() {
           {/* Amount */}
           <div>
             <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-1">
-              Amount <span className="text-red-500">*</span>
+              ចំនួនទឹកប្រាក់ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -140,7 +140,7 @@ function CreateExpense() {
           {/* Category */}
           <div>
             <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
-              Category <span className="text-red-500">*</span>
+              ប្រភេទចំណាយ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -154,7 +154,7 @@ function CreateExpense() {
                 className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none bg-white"
                 required
               >
-                <option value="">Select a category</option>
+                <option value="">ជ្រើសរើសប្រភេទចំណាយ</option>
                 {categories.map((cat) => (
                   <option key={cat.value} value={cat.value}>
                     {cat.label}
@@ -176,7 +176,7 @@ function CreateExpense() {
               disabled={isLoading}
               className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? 'Adding...' : 'Add Expense'}
+              {isLoading ? 'បន្ថែម...' : 'បន្ថែម ប្រតិបត្តិការណ៍ចំណាយ'}
             </button>
           </div>
         </form>

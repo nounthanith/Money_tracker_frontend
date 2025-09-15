@@ -10,11 +10,11 @@ import {
 import { api } from "../../utils/api";
 
 const categories = [
-  { value: "Salary", label: "💰 Salary" },
-  { value: "Bonus", label: "🎁 Bonus" },
+  { value: "Salary", label: "💰 ប្រាក់ខែ" },
+  { value: "Bonus", label: "🎁 ប្រាក់បន្ងែម" },
   { value: "Freelance", label: "💼 Freelance" },
-  { value: "Investment", label: "📈 Investment" },
-  { value: "Other", label: "📌 Other" },
+  { value: "Investment", label: "📈 ប្រាក់វិនិយោគ" },
+  { value: "Other", label: "📌 ផ្សេងទៀត" },
 ];
 
 function CreateIncome() {
@@ -84,7 +84,7 @@ function CreateIncome() {
               <FiArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
             <h1 className="text-xl font-semibold text-gray-800">
-              Add New Income
+              បន្ថែម ប្រតិបត្តិការណ៍ចំណូល
             </h1>
           </div>
         </div>
@@ -103,7 +103,7 @@ function CreateIncome() {
               htmlFor="source"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Source <span className="text-red-500">*</span>
+              ប្រភពចំណូល <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -116,7 +116,7 @@ function CreateIncome() {
                 value={formData.source}
                 onChange={handleChange}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                placeholder="e.g., Company Name, Client"
+                placeholder="ប្រភពចំណូលឧទាហរណ៍ ឈ្នះបៀរ"
                 required
               />
             </div>
@@ -128,7 +128,7 @@ function CreateIncome() {
               htmlFor="amount"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Amount <span className="text-red-500">*</span>
+              ចំនួនទឹកប្រាក់ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -155,7 +155,7 @@ function CreateIncome() {
               htmlFor="category"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Category <span className="text-red-500">*</span>
+              ប្រភេទប្រតិបត្តិការណ៍ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

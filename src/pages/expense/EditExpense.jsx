@@ -4,13 +4,13 @@ import { FiArrowLeft, FiDollarSign, FiTag, FiCalendar, FiCreditCard } from "reac
 import { api } from "../../utils/api";
 
 const categories = [
-    { value: 'Food', label: '🍔 Food' },
-    { value: 'Shopping', label: '🛍️ Shopping' },
-    { value: 'Transportation', label: '🚗 Transportation' },
-    { value: 'Bills', label: '💳 Bills' },
-    { value: 'Entertainment', label: '🎬 Entertainment' },
-    { value: 'Health', label: '🏥 Health' },
-    { value: 'Others', label: '📌 Others' },
+    { value: 'Food', label: '🍔 អាហារ' },
+  { value: 'Shopping', label: '🛍️ ទិញទំនិញ' },
+  { value: 'Transportation', label: '🚗 ការធ្វើដំណើរ' },
+  { value: 'Bills', label: '💳 ការបង់ប្រាក់តាមកាត' },
+  { value: 'Entertainment', label: '🎬 កំម្សាន្ត' },
+  { value: 'Health', label: '🏥សុខភាព' },
+  { value: 'Other', label: '📌 ផ្សេងទៀត' },
 ];
 
 function EditExpense() {
@@ -82,7 +82,7 @@ function EditExpense() {
             >
               <FiArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <h1 className="text-xl font-semibold text-gray-800">Edit Expense</h1>
+            <h1 className="text-xl font-semibold text-gray-800">កែប្រែ ប្រតិបត្តិការណ៍ចំណាយ</h1>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ function EditExpense() {
           {/* Source */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Title <span className="text-red-500">*</span>
+              ចំណងជើង <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -108,7 +108,7 @@ function EditExpense() {
                 value={formData.title}
                 onChange={handleChange}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                placeholder="e.g., Company Name, Client"
+                placeholder="ញាំអាហារពេលល្ងាច"
                 required
               />
             </div>
@@ -117,7 +117,7 @@ function EditExpense() {
           {/* Amount */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Amount <span className="text-red-500">*</span>
+              ចំនួនទឹកប្រាក់ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -140,7 +140,7 @@ function EditExpense() {
           {/* Category */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Category <span className="text-red-500">*</span>
+              ប្រភេទចំណាយ <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -173,7 +173,7 @@ function EditExpense() {
             disabled={isLoading}
             className="w-full py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
           >
-            {isLoading ? "Updating..." : "Update Income"}
+            {isLoading ? "កែប្រែ..." : "កែប្រែ ប្រតិបត្តិការណ៍ចំណាយ"}
           </button>
         </form>
       </div>
